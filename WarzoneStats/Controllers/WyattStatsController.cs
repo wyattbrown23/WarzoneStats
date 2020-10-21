@@ -27,14 +27,16 @@ namespace WarzoneStats.Controllers
         public async Task<WyattStatResult> WyattStatsRaw()
         {
             var client = new HttpClient();
+            var key = configuration["x-rapidapi-key"];
             var request = new HttpRequestMessage
+            
             {
                 Method = HttpMethod.Get,
                 RequestUri = new Uri("https://rapidapi.p.rapidapi.com/warzone/fadelessdaisy2/psn"),
                 Headers =
                 {
                     { "x-rapidapi-host", "call-of-duty-modern-warfare.p.rapidapi.com" },
-                    { "x-rapidapi-key", "4c0fc8b18fmshb4f2846fea59d3cp1e3658jsn0e9558aae0d1" },
+                    { "x-rapidapi-key", key },
                 },
             };
             using (var response = await client.SendAsync(request))
