@@ -10,10 +10,26 @@
     <div class="form-group">
         <label name="userName">User Name:</label>
         <input type="text" name="userName" class="form-control" />
+        <p>
+            REQUIRED
+            You must replace # by %2523
+        </p>
     </div>
     <div class="form-group">
         <label name="platform">Platform:</label>
         <input type="text" name="platform" class="form-control" />
+        <p>
+            REQUIRED
+            <ul>
+                <li>psn</li>
+                <li>steam</li>
+                <li>xbl</li>
+                <li>battle</li>
+                <li>uno (Activision ID)</li>
+                <li>acti (Activision Tag)</li>
+            </ul>
+
+        </p>
     </div>
     <button type="submit" class="btn btn-primary">Find User Stats</button>
 </form>
@@ -44,3 +60,14 @@
 <p>
     Deaths: @Model.UserStatResult.br.deaths
 </p>
+
+<h2>Links:</h2>
+<a href="wyattstats">See Wyatt's Stats.</a>
+<br>
+<a href="austinstats">See Austin's Stats.</a>
+<br>
+<a href="samstats">See Sam's Stats.</a>
+<br>
+<a href="stevestats">See Steve's Stats.</a>
+<br>
+<a href="mattstats">See Matt's Stats.</a>
