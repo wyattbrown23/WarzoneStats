@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using WarzoneStats.Data;
 
 namespace WarzoneStats
 {
@@ -27,6 +28,8 @@ namespace WarzoneStats
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddRazorPages();
+            services.AddScoped<IStatService, StatService>();
 
             services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://rapidapi.p.rapidapi.com") });
             services.AddSwaggerGen(options =>
@@ -49,6 +52,7 @@ namespace WarzoneStats
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
             });
 
