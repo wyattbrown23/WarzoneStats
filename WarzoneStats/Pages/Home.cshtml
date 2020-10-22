@@ -1,0 +1,46 @@
+﻿@page "/home"
+@model WarzoneStats.Pages.HomeModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<h1>Find User's Stats</h1>
+<form asp-page-handler="GetUserStat" method="post">
+    <div class="form-group">
+        <label name="userName">User Name:</label>
+        <input type="text" name="userName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label name="platform">Platform:</label>
+        <input type="text" name="platform" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Find User Stats</button>
+</form>
+<p>
+    Wins: @Model.UserStatResult.br.wins
+</p>
+<p>
+    Kills: @Model.UserStatResult.br.kills
+</p>
+<p>
+    K/D Ratio: @Model.UserStatResult.br.kdRatio
+</p>
+<p>
+    Downs: @Model.UserStatResult.br.downs
+</p>
+<p>
+    Top Ten: @Model.UserStatResult.br.topTen
+</p>
+<p>
+    Contracts: @Model.UserStatResult.br.contracts
+</p>
+<p>
+    Revives: @Model.UserStatResult.br.revives
+</p>
+<p>
+    Score: @Model.UserStatResult.br.score
+</p>
+<p>
+    Deaths: @Model.UserStatResult.br.deaths
+</p>

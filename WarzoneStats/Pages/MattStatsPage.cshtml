@@ -1,0 +1,35 @@
+﻿@page "/mattstats"
+@model WarzoneStats.Pages.MattStatsPageModel
+@{
+    Layout = null;
+}
+
+<h1>Matt's Statisitcs:</h1>
+<p>
+    Wins: @Model.MattStatResult.br.wins
+</p>
+<p>
+    Kills: @Model.MattStatResult.br.kills
+</p>
+<p>
+    K/D Ratio: @Model.MattStatResult.br.kdRatio
+</p>
+<p>
+    Downs: @Model.MattStatResult.br.downs
+</p>
+<p>
+    Top Ten: @Model.MattStatResult.br.topTen
+</p>
+<p>
+    Contracts: @Model.MattStatResult.br.contracts
+</p>
+<p>
+    Revives: @Model.MattStatResult.br.revives
+</p>
+<p>
+    Score: @Model.MattStatResult.br.score
+</p>
+<p>
+    Deaths: @Model.MattStatResult.br.deaths
+</p>
+

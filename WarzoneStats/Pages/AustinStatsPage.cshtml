@@ -1,0 +1,34 @@
+﻿@page "/austinstats"
+@model WarzoneStats.Pages.AustinStatsPageModel
+@{
+    Layout = null;
+}
+
+<h1>Austin's Statisitcs:</h1>
+<p>
+    Wins: @Model.AustinStatResult.br.wins
+</p>
+<p>
+    Kills: @Model.AustinStatResult.br.kills
+</p>
+<p>
+    K/D Ratio: @Model.AustinStatResult.br.kdRatio
+</p>
+<p>
+    Downs: @Model.AustinStatResult.br.downs
+</p>
+<p>
+    Top Ten: @Model.AustinStatResult.br.topTen
+</p>
+<p>
+    Contracts: @Model.AustinStatResult.br.contracts
+</p>
+<p>
+    Revives: @Model.AustinStatResult.br.revives
+</p>
+<p>
+    Score: @Model.AustinStatResult.br.score
+</p>
+<p>
+    Deaths: @Model.AustinStatResult.br.deaths
+</p>

@@ -1,0 +1,34 @@
+﻿@page "/samstats"
+@model WarzoneStats.Pages.SamStatsPageModel
+@{
+    Layout = null;
+}
+
+<h1>Sam's Statisitcs:</h1>
+<p>
+    Wins: @Model.SamStatResult.br.wins
+</p>
+<p>
+    Kills: @Model.SamStatResult.br.kills
+</p>
+<p>
+    K/D Ratio: @Model.SamStatResult.br.kdRatio
+</p>
+<p>
+    Downs: @Model.SamStatResult.br.downs
+</p>
+<p>
+    Top Ten: @Model.SamStatResult.br.topTen
+</p>
+<p>
+    Contracts: @Model.SamStatResult.br.contracts
+</p>
+<p>
+    Revives: @Model.SamStatResult.br.revives
+</p>
+<p>
+    Score: @Model.SamStatResult.br.score
+</p>
+<p>
+    Deaths: @Model.SamStatResult.br.deaths
+</p>
