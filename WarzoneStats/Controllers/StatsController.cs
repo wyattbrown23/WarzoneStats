@@ -54,9 +54,9 @@ namespace WarzoneStats.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<SteveStatResult> SteveStatsRaw(string userName, string platform)
+        public async Task<UserStatResult> UserStatsRaw(string userName, string platform)
         {
-            return await statService.GetSteveStatAsync();
+            return await statService.GetUserStatAsync(userName, platform);
         }
     }
 }
