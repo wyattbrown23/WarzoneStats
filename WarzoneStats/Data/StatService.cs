@@ -166,7 +166,6 @@ namespace WarzoneStats.Data
                 var body = await response.Content.ReadAsStringAsync();
                 var statResult = JsonSerializer.Deserialize<WyattStatResult>(body);
                 return statResult;
-
             }
         }
     }

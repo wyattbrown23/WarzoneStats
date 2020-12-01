@@ -55,106 +55,81 @@
     </style>
 </head>
 
-    
+<header>
     <div class="topnav" id="myTopnav">
         <a href="/" class="active">Home</a>
-        <a href="wyattstats" ">Wyatt's Stats</a>
+        <a href="wyattstats">Wyatt's Stats</a>
         <a href="austinstats">Austin's Stats</a>
         <a href="stevestats">Steve's Stats</a>
         <a href="samstats">Sam's Stats</a>
         <a href="mattstats">Matt's Stats</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
     </div>
+</header>
+
 
     <h1>Find User's Stats</h1>
-    <form form asp-page-handler="GetUserStat" method="post">
-        <fieldset>
-            <legend>Search User</legend>
-            <div>
-                <label name="userName">User Name:</label>
-                <input type="text" name="userName" />
-                <p>
-                    REQUIRED:
-                    You must replace # by %2523
-                </p>
-            </div>
-            <div>
-                <label name="platform">Platform:</label>
-                <input type="text" name="platform"/>
-                <p>
-                    REQUIRED:
-                    <ul>
-                        <li>psn</li>
-                        <li>steam</li>
-                        <li>xbl</li>
-                        <li>battle</li>
-                        <li>uno (Activision ID)</li>
-                        <li>acti (Activision Tag)</li>
-                    </ul>
-                </p>
-            </div>
-            <div>
-                <button type="submit" class="btn btn-primary">Find User Stats</button>
-            </div>
-        </fieldset>
-    </form>
 
-    
-    @*<form asp-page-handler="getuserstat" method="post">
-        <div class="form-group">
-            <label name="username">user name:</label>
-            <input type="text" name="username" class="form-control" />
-            <p>
-                required
-                you must replace # by %2523
-            </p>
-        </div>
-        <div class="form-group">
-            <label name="platform">platform:</label>
-            <input type="text" name="platform" class="form-control" />
-            <p>
-                required
-                <ul>
-                    <li>psn</li>
-                    <li>steam</li>
-                    <li>xbl</li>
-                    <li>battle</li>
-                    <li>uno (activision id)</li>
-                    <li>acti (activision tag)</li>
-                </ul>
+    <body>
+        <form asp-page-handler="getuserstat" method="post">
+            <fieldset>
+                <legend>Search User</legend>
+                <div>
+                    <label name="userName">User Name:</label>
+                    <input type="text" name="userName" />
+                    <p>
+                        REQUIRED:
+                        You must replace # by %2523
+                    </p>
+                </div>
+                <div>
+                    <label name="platform">Platform:</label>
+                    <input type="text" name="platform" />
+                    <p>
+                        REQUIRED:
+                        <ul>
+                            <li>psn</li>
+                            <li>steam</li>
+                            <li>xbl</li>
+                            <li>battle</li>
+                            <li>uno (Activision ID)</li>
+                            <li>acti (Activision Tag)</li>
+                        </ul>
+                    </p>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Find User Stats</button>
+                </div>
+            </fieldset>
+        </form>
 
-            </p>
-        </div>
-        <button type="submit" class="btn btn-primary">find user stats</button>
-    </form>*@
+        <table>
+            <tr>
+                <td>Wins</td>
+                <td>Kills</td>
+                <td>K/D Ratio</td>
+                <td>Downs</td>
+                <td>Top Ten</td>
+                <td>Contracts</td>
+                <td>Revives</td>
+                <td>Score</td>
+                <td>Deaths</td>
+            </tr>
+            <tr>
+                <td>@Model.UserStatResult.br.wins</td>
+                <td>@Model.UserStatResult.br.kills</td>
+                <td>@Model.UserStatResult.br.kdRatio</td>
+                <td>@Model.UserStatResult.br.downs</td>
+                <td>@Model.UserStatResult.br.topTen</td>
+                <td>@Model.UserStatResult.br.contracts</td>
+                <td>@Model.UserStatResult.br.revives</td>
+                <td>@Model.UserStatResult.br.score</td>
+                <td>@Model.UserStatResult.br.deaths</td>
+            </tr>
+        </table>
+    </body>
 
-    <table>
-        <tr>
-            <td>Wins</td>
-            <td>Kills</td>
-            <td>K/D Ratio</td>
-            <td>Downs</td>
-            <td>Top Ten</td>
-            <td>Contracts</td>
-            <td>Revives</td>
-            <td>Score</td>
-            <td>Deaths</td>
-        </tr>
-        <tr>
-            <td>@Model.UserStatResult.br.wins</td>
-            <td>@Model.UserStatResult.br.kills</td>
-            <td>@Model.UserStatResult.br.kdRatio</td>
-            <td>@Model.UserStatResult.br.downs</td>
-            <td>@Model.UserStatResult.br.topTen</td>
-            <td>@Model.UserStatResult.br.contracts</td>
-            <td>@Model.UserStatResult.br.revives</td>
-            <td>@Model.UserStatResult.br.score</td>
-            <td>@Model.UserStatResult.br.deaths</td>
-        </tr>
-    </table>
-    
 
-    
+
+
+
 
