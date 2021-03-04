@@ -101,6 +101,11 @@
             </fieldset>
         </form>
 
+        @if(Model.UserStatResult.br.score == 0)
+        {
+            <h2>Username/platform may be incorrect or user's stats might be private</h2>
+        }
+
         <table>
             <tr>
                 <td>Wins</td>

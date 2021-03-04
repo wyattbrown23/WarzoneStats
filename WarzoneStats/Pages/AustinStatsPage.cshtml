@@ -66,27 +66,38 @@
 </div>
 
 <h1>Austin's Statisitcs:</h1>
-<table>
-    <tr>
-        <td>Wins</td>
-        <td>Kills</td>
-        <td>K/D Ratio</td>
-        <td>Downs</td>
-        <td>Top Ten</td>
-        <td>Contracts</td>
-        <td>Revives</td>
-        <td>Score</td>
-        <td>Deaths</td>
-    </tr>
-    <tr>
-        <td>@Model.AustinStatResult.br.wins</td>
-        <td>@Model.AustinStatResult.br.kills</td>
-        <td>@Model.AustinStatResult.br.kdRatio</td>
-        <td>@Model.AustinStatResult.br.downs</td>
-        <td>@Model.AustinStatResult.br.topTen</td>
-        <td>@Model.AustinStatResult.br.contracts</td>
-        <td>@Model.AustinStatResult.br.revives</td>
-        <td>@Model.AustinStatResult.br.score</td>
-        <td>@Model.AustinStatResult.br.deaths</td>
-    </tr>
-</table>
+
+@if (Model.AustinStatResult.br == null)
+{
+    <h2>User's stats are currently private</h2>
+}
+else
+{
+    <table>
+        <tr>
+            <td>Wins</td>
+            <td>Kills</td>
+            <td>K/D Ratio</td>
+            <td>Downs</td>
+            <td>Top Ten</td>
+            <td>Contracts</td>
+            <td>Revives</td>
+            <td>Score</td>
+            <td>Deaths</td>
+        </tr>
+        <tr>
+
+
+            <td>@Model.AustinStatResult.br.wins</td>
+            <td>@Model.AustinStatResult.br.kills</td>
+            <td>@Model.AustinStatResult.br.kdRatio</td>
+            <td>@Model.AustinStatResult.br.downs</td>
+            <td>@Model.AustinStatResult.br.topTen</td>
+            <td>@Model.AustinStatResult.br.contracts</td>
+            <td>@Model.AustinStatResult.br.revives</td>
+            <td>@Model.AustinStatResult.br.score</td>
+            <td>@Model.AustinStatResult.br.deaths</td>
+        </tr>
+    </table>
+}
+

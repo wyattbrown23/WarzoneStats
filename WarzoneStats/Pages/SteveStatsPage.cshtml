@@ -67,27 +67,34 @@
 </div>
 
 <h1>Steve's Statisitcs:</h1>
-<table>
-    <tr>
-        <td>Wins</td>
-        <td>Kills</td>
-        <td>K/D Ratio</td>
-        <td>Downs</td>
-        <td>Top Ten</td>
-        <td>Contracts</td>
-        <td>Revives</td>
-        <td>Score</td>
-        <td>Deaths</td>
-    </tr>
-    <tr>
-        <td>@Model.SteveStatResult.br.wins</td>
-        <td>@Model.SteveStatResult.br.kills</td>
-        <td>@Model.SteveStatResult.br.kdRatio</td>
-        <td>@Model.SteveStatResult.br.downs</td>
-        <td>@Model.SteveStatResult.br.topTen</td>
-        <td>@Model.SteveStatResult.br.contracts</td>
-        <td>@Model.SteveStatResult.br.revives</td>
-        <td>@Model.SteveStatResult.br.score</td>
-        <td>@Model.SteveStatResult.br.deaths</td>
-    </tr>
-</table>
+@if(Model.SteveStatResult.br == null)
+{
+    <h2>User's stats are currently private</h2>
+}
+else
+{
+    <table>
+        <tr>
+            <td>Wins</td>
+            <td>Kills</td>
+            <td>K/D Ratio</td>
+            <td>Downs</td>
+            <td>Top Ten</td>
+            <td>Contracts</td>
+            <td>Revives</td>
+            <td>Score</td>
+            <td>Deaths</td>
+        </tr>
+        <tr>
+            <td>@Model.SteveStatResult.br.wins</td>
+            <td>@Model.SteveStatResult.br.kills</td>
+            <td>@Model.SteveStatResult.br.kdRatio</td>
+            <td>@Model.SteveStatResult.br.downs</td>
+            <td>@Model.SteveStatResult.br.topTen</td>
+            <td>@Model.SteveStatResult.br.contracts</td>
+            <td>@Model.SteveStatResult.br.revives</td>
+            <td>@Model.SteveStatResult.br.score</td>
+            <td>@Model.SteveStatResult.br.deaths</td>
+        </tr>
+    </table>
+}

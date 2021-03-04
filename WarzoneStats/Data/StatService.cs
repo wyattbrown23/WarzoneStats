@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace WarzoneStats.Data
 {
     public class StatService : IStatService
     {
+        private readonly ILogger<StatService> _logger;
         private readonly HttpClient httpClient;
         private readonly IConfiguration configuration;
 
-        public StatService(HttpClient httpClient, IConfiguration configuration)
+        public StatService(HttpClient httpClient, IConfiguration configuration, ILogger<StatService> logger)
         {
+            _logger = logger;
             this.httpClient = httpClient;
             this.configuration = configuration;
         }
@@ -40,6 +43,14 @@ namespace WarzoneStats.Data
                 response.EnsureSuccessStatusCode();
                 var body = await response.Content.ReadAsStringAsync();
                 var statResult = JsonSerializer.Deserialize<AustinStatResult>(body);
+                if(response.StatusCode.Equals(404))
+                {
+                    _logger.LogError("The API is DOWN");
+                }
+                if (statResult.Equals(null))
+                {
+                    _logger.LogError("The user's data may be private");
+                }
                 return statResult;
 
             }
