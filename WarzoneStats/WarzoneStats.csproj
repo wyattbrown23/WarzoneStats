@@ -11,7 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Components\" />
+    <None Include="wwwroot\youngAustin.PNG" />
+    <None Include="wwwroot\youngMatt.PNG" />
+    <None Include="wwwroot\youngSam.jpg" />
+    <None Include="wwwroot\youngSteve.PNG" />
+    <None Include="wwwroot\youngWyatt.jpg" />
   </ItemGroup>
 
 

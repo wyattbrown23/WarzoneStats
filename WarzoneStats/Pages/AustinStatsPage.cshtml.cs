@@ -19,6 +19,7 @@ namespace WarzoneStats.Pages
         }
         public async Task OnGet()
         {
+            
             AustinStatResult = await statService.GetAustinStatAsync();
         }
     }
