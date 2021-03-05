@@ -7,6 +7,6 @@ namespace WarzoneStats
 {
     public class LoggingId
     {
-        public const int DemoCode = 1001;
+        public const int PrivateUsnPlatWarning = 5;
     }
 }
